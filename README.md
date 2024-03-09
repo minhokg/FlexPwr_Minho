@@ -24,11 +24,9 @@ from task2_computepnl import compute_pnl
 
 The results for strategy_1 & 2 are the below pictures. 
 
-<div style="display: flex;">
-    <img src="pics/strategy_1.png" alt="strategy_1" style="width: 50%;"/>
-    <img src="pics/strategy_2.png" alt="strategy_2" style="width: 50%;"/>
+<div style="display: flex; justify-content: space-between;">
+    <img src="pics/strategy_1.png" alt="strategy_1" style="width: 48%;"/>
+    <img src="pics/strategy_2.png" alt="strategy_2" style="width: 48%;"/>
 </div>
-
-
 
 
