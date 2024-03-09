@@ -6,7 +6,7 @@ class FlexPwrVolCalculator:
         self.database_path = database_path
         self.table_name = table_name
 
-    def compute_total_buy_volume(self, *args, **kwargs) -> float:
+    def compute_total_buy_volume(self) -> float:
         """
         Compute the total buy volume
         Returns: The total buy volume (float)
@@ -32,7 +32,7 @@ class FlexPwrVolCalculator:
         except sqlite3.Error as e:
             print(f"SQLite error: {e}")
 
-    def compute_total_sell_volume(self, *args, **kwargs) -> float:
+    def compute_total_sell_volume(self) -> float:
         """
         Compute the total sell volume
         Returns: The total sell volume (float)
