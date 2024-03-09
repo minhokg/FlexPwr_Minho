@@ -5,10 +5,10 @@
   * [Task1](#Task1)
   * [Task2](#Task2)
   * [Task3](#Task3)
-* [Setup](#Setup)
 
 ## Background
-This repo consists of three solutions for three tasks in [**FlexPower QuantChallenge**](https://github.com/FlexPwr/QuantChallenge). I used Python packages [`sqlite3`](https://docs.python.org/3/library/sqlite3.html) (task 1 & 2), [`flask`](https://flask.palletsprojects.com/en/3.0.x/) (task 3). 
+This repo consists of three solutions for three tasks in [**FlexPower QuantChallenge**](https://github.com/FlexPwr/QuantChallenge). The period spent on those problems is from `18 pm 08/03/2024` to `9 am 11/03/2024` (CET).   
+Here, I mostly used Python packages [`sqlite3`](https://docs.python.org/3/library/sqlite3.html) (task 1 & 2), and [`flask`](https://flask.palletsprojects.com/en/3.0.x/) (task 3). Also I defined a `class` in task 1
 
 ## Solution
 
@@ -34,13 +34,13 @@ cursor.execute(f"SELECT SUM(CASE WHEN SIDE='sell' THEN QUANTITY * PRICE ELSE -QU
 [task3_pnlapp.py](task3_pnlapp.py)
 
 * If you already set up your virtual environment, you can run the file by `flask --app task3_pnlapp.py run --debug`. 
-* I imported the task 2 function (`compute_pnl`)
+* I imported the function of task 2
 ```python
 from task2_computepnl import compute_pnl
 ```
 * The function `main()` defines the initial pages. The page shows JSON file of `strategy_1`, which is result of the function `get_pnl`
 * The function `get_pnl` gets `strategy_id` as an argument and returns a JSON file.
-* The JSON file contains the `strategy_id`, `pnl_value`, `unit(euro)`, and the `capture_time`
+* The JSON file contains the strategy_id, pnl_value, unit(euro), and the capture_time
 
 ```python
     response_data = {
