@@ -24,7 +24,10 @@ from task2_computepnl import compute_pnl
 
 The results for strategy_1 & 2 are the below pictures. 
 
-<img src="pics/strategy_1.png" alt="strategy_1" width="300"/>
+<div style="display: flex;">
+    <img src="pics/strategy_1.png" alt="strategy_1" style="width: 50%;"/>
+    <img src="pics/strategy_2.png" alt="strategy_2" style="width: 50%;"/>
+</div>
 
 
 
