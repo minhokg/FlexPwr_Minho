@@ -7,8 +7,8 @@
   * [Task3](#Task3)
 
 ## Background
-This repo consists of three solutions for three tasks in [**FlexPower QuantChallenge**](https://github.com/FlexPwr/QuantChallenge). The period spent on those problems is from `18 pm 08/03/2024` to `9 am 11/03/2024` (CET).   
-Here, I mostly used Python packages [`sqlite3`](https://docs.python.org/3/library/sqlite3.html) (task 1 & 2), and [`flask`](https://flask.palletsprojects.com/en/3.0.x/) (task 3). Also I defined a `class` in task 1
+This repo consists of three solutions for three tasks in [**FlexPower QuantChallenge**](https://github.com/FlexPwr/QuantChallenge). The period spent on those problems is from 18 pm 08/03/202` to 9 am 11/03/2024 (CET).   
+Here, I mostly used Python packages [sqlite3](https://docs.python.org/3/library/sqlite3.html) (task 1 & 2), and [flask](https://flask.palletsprojects.com/en/3.0.x/) (task 3). Also I defined a `class` in task 1
 
 ## Solution
 
