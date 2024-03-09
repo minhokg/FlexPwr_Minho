@@ -19,7 +19,7 @@ def get_pnl(strategy_id):
         'unit': 'euro',
         'capture_time': datetime.utcnow().isoformat()
     }
-    return jsonify(response_data), 200
+    return jsonify(response_data)
 
 
 if __name__ == "__main__":

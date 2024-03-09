@@ -7,13 +7,24 @@ class FlexPwrVolCalculator:
         self.table_name = table_name
 
     def compute_total_buy_volume(self, *args, **kwargs) -> float:
+        """
+        Compute the total buy volume
+        Returns: The total buy volume (float)
+        """
+
         try:
+            # Connect to the database
             dtbase = sqlite3.connect(self.database_path)
             cursor = dtbase.cursor()
+
+            # Execute SQL query to compute total buy volume
             cursor.execute(
                 f"SELECT SUM(QUANTITY) FROM {self.table_name} WHERE SIDE ='buy' ")
+
+            # Retrieve the result
             total_buy_volume = cursor.fetchone()[0]
 
+            # Close the cursor and connection
             cursor.close()
             dtbase.close()
 
@@ -22,12 +33,24 @@ class FlexPwrVolCalculator:
             print(f"SQLite error: {e}")
 
     def compute_total_sell_volume(self, *args, **kwargs) -> float:
+        """
+        Compute the total sell volume
+        Returns: The total sell volume (float)
+        """
+
         try:
+            # Connect to the database
             dtbase = sqlite3.connect(self.database_path)
             cursor = dtbase.cursor()
+
+            # Execute SQL query to compute total sell volume
             cursor.execute(
                 f"SELECT SUM(quantity) FROM {self.table_name} WHERE SIDE = 'sell' ")
+
+            # Retrieve the result
             total_sell_volume = cursor.fetchone()[0]
+
+            # Close the cursor and connection
             cursor.close()
             dtbase.close()
 
@@ -36,6 +59,8 @@ class FlexPwrVolCalculator:
         except sqlite3.Error as e:
             print(f"SQLite error: {e}")
 
+
+# Try the class with epex_12_20_12_13 table in trades database
 
 try:
     vol_calculator = FlexPwrVolCalculator(
