@@ -26,7 +26,3 @@ def get_pnl(strategy_id):
         'capture_time': datetime.utcnow().isoformat()  # Use the current time
     }
     return jsonify(response_data)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
