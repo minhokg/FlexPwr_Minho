@@ -24,7 +24,7 @@ from task2_computepnl import compute_pnl
 
 The results for strategy_1 & 2 are the below pictures. 
 
-![strategy_1](/pics/strategy_1)
+![strategy_1.png](pics/strategy_1.png)
 
 
 
