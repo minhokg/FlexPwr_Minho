@@ -16,18 +16,20 @@ pnl_model = api.model('schema', {
     'capture_time': fields.String(example='2024-03-10T14:33:58.408345')
 })
 
-# Build API
+# Build PnL get API
 
 
-@api.route('/pnl/<strategy_id>')
+@api.route('/pnl/<string:strategy_id>')  # Set the endpoint as a strategy_id
 class PNL(Resource):
+    # Put the description on a parameter(strategy_id)
     @api.doc(params={'strategy_id': 'string identifier of a strategy.'})
+    # Description on response data and its schema
     @api.response(200, 'A PnL data object.', pnl_model)
     def get(self, strategy_id):
         """
         Returns the pnl of the corresponding strategy.
         """
-        pnl_value = compute_pnl(strategy_id=strategy_id, database_path='trades.sqlite',
+        pnl_value = compute_pnl(strategy_id=strategy_id, database_path='trades.sqlite',  # Compute the pnl using the second task function
                                 table_name='epex_12_20_12_13')
         response = {'strategy_id': strategy_id,
                     'value': pnl_value,
