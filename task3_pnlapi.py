@@ -29,7 +29,8 @@ class PNL(Resource):
         """
         Returns the pnl of the corresponding strategy.
         """
-        pnl_value = compute_pnl(strategy_id=strategy_id, database_path='trades.sqlite',  # Compute the pnl using the second task function
+        # Compute the pnl using the second task function
+        pnl_value = compute_pnl(strategy_id=strategy_id, database_path='trades.sqlite',
                                 table_name='epex_12_20_12_13')
         response = {'strategy_id': strategy_id,
                     'value': pnl_value,
