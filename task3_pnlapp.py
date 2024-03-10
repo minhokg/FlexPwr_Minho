@@ -13,7 +13,7 @@ parser.add_argument('strategy_id', type=str, required=True,
 
 @api.route('/pnl/<strategy_id>')
 class PNL(Resource):
-    @api.doc(summary="Return")
+    @api.doc(summary="Returns the pnl of the correspoding strategy")
     def get(self, strategy_id):
         pnl_value = compute_pnl(strategy_id=strategy_id, database_path='trades.sqlite',
                                 table_name='epex_12_20_12_13')
@@ -24,3 +24,7 @@ class PNL(Resource):
             'unit': 'euro',
             'capture_time': datetime.utcnow().isoformat()  # Use the current time
         }
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=5000)
