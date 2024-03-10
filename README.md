@@ -139,7 +139,7 @@ responses:
 
 ```
 
-* Below is the video for simulating the API. Start running the Flask app through a virtual environment.
+* Below is the video for simulating the API. Start running the Flask app through a virtual environment. You can see the JSON file of strategy 1 PnL information.
 
 
 
