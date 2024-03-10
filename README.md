@@ -33,6 +33,11 @@ cursor.execute(f"SELECT SUM(QUANTITY) FROM {self.table_name} WHERE SIDE ='buy' "
 cursor.execute(f"SELECT SUM(CASE WHEN SIDE='sell' THEN QUANTITY * PRICE ELSE -QUANTITY * PRICE END)"
                f"FROM {table_name} WHERE strategy = ?", (strategy_id,))
 ```
+* Return 0 if there is no corresponding strategy_id
+
+```python
+return pnl if pnl is not None else 0
+```
 
 ### Task3 
 [task3_pnlapi.py](task3_pnlapi.py)
@@ -42,11 +47,11 @@ cursor.execute(f"SELECT SUM(CASE WHEN SIDE='sell' THEN QUANTITY * PRICE ELSE -QU
 ```python
 from task2_computepnl import compute_pnl
 ```
-* Define the API first. Set the basepath as a v1
+* Define the API first. Set the basePath as `v1`
 ```python
 app = Flask(__name__)
 api = Api(app, title="Energy Trading API",
-          prefix='/v1',  # Set base_url as v1
+          prefix='/v1',  # Set basePath as v1
           default="Get PnL data", default_label="")
 ```
 * Define the scheme of response data. The schema is given in the task 3 question. And also include the example
@@ -81,7 +86,7 @@ class PNL(Resource):
         return response
 ```
 
-* The API information of the result is quite similar with the task 3 question
+* The API information of the result is quite similar with the task 3 question. The schema of responses refers to the definition part 
 
 ```YAML
 ---
