@@ -141,6 +141,7 @@ responses:
 
 * Below is the video for simulating the API. 
 
+https://github.com/minhokg/FlexPwr_Minho/assets/90128043/a071bf57-83a2-439c-8eeb-c6a73bad2868
 
 
 
